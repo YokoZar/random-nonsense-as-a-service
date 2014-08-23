@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import bottle
 from bottle import route, run
 import subprocess
 EXEC = "/usr/bin/dadadodo"
@@ -30,5 +31,8 @@ def run_dada(quote_file, sentences="1"):
 def oscar(number="1"):
     return str(run_dada("oscar.txt", sentences=number))
 
-run(host='localhost', port=80, server="gunicorn")
+if __name__ == "__main__":
+    run(host='localhost', port=8080, debug=True)
+
+app = bottle.default_app()
 
