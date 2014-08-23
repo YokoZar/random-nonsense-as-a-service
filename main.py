@@ -30,5 +30,5 @@ def run_dada(quote_file, sentences="1"):
 def oscar(number="1"):
     return str(run_dada("oscar.txt", sentences=number))
 
-run(host='localhost', port=8080, server="gunicorn")
+run(host='localhost', port=80, server="gunicorn")
 
